@@ -43,10 +43,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd-party
+    'rest_framework',
 
     # local
     'menu',
+    'api',
 ]
+
+REST_FRAMEWORK = {
+'DEFAULT_PERMISSION_CLASSES': [
+'rest_framework.permissions.AllowAny',
+]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
