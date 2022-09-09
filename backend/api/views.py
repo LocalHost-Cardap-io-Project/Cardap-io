@@ -4,10 +4,10 @@ from .serializers import MenuSerializer
 
 # Create your views here.
 
-class ListMenu(generics.ListAPIView):
+class ListMenu(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
-class DetailMenu(generics.RetrieveAPIView):
+class DetailMenu(generics.RetrieveUpdateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
