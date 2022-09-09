@@ -7,13 +7,13 @@ from django.db import models
 
 class Categoria(models.Model):
     name = models.CharField(max_length=50)
-    img = models.ImageField(upload_to="cat-bg", null=True, blank=True)
+    img = models.ImageField(upload_to="images/cat-bg", null=True, blank=True)
     desc = models.TextField()
 
 
 class Menu(models.Model):
     name = models.CharField(max_length=50)
-    img = models.ImageField(upload_to="menu-bg" ,null=True, blank=True)
+    img = models.ImageField(upload_to="images/menu-bg" ,null=True, blank=True)
 
 
 class Categoria_Menu(models.Model):
