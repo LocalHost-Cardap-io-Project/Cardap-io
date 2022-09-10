@@ -1,6 +1,6 @@
 # Cardap-io
 
-O [Cardap-io](#) disponibiliza uma API REST que permite o acesso aos contatos, produtos e vendas do sistema.
+O [Cardap-io](#) disponibiliza uma API REST que permite o acesso e registro de restaurantes, menus, categorias, produtos/pratos.
 
 
 Recursos disponíveis para acesso via API:
