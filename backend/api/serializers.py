@@ -4,7 +4,7 @@ from menu.models import Menu, Categoria, Categoria_Menu
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu
-        fields = ('id', 'name', 'img')
+        fields = ('id', 'autor', 'name', 'img')
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
