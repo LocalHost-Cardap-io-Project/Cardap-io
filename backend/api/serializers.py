@@ -63,7 +63,7 @@ class ClientSignupSerializer(serializers.ModelSerializer):
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu
-        fields = ('id', 'name', 'img')
+        fields = ('id', 'organization', 'name', 'img')
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
