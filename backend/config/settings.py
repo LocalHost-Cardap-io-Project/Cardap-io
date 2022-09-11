@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # 3rd-party
     'rest_framework',
+    'rest_framework.authtoken',
 
     # local
     'menu',
@@ -116,6 +117,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+AUTH_USER_MODEL = 'menu.User'
+ACCOUNT_UNIQUE_EMAIL = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
