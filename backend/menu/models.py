@@ -63,6 +63,7 @@ class Client(models.Model):
 
 
 class Menu(models.Model):
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     img = models.ImageField(upload_to="images/menu-bg" ,null=True, blank=True)
 
