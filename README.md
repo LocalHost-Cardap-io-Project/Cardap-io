@@ -4,6 +4,12 @@ O [Cardap-io](#) disponibiliza uma API REST que permite o acesso e registro de r
 
 
 Recursos disponíveis para acesso via API:
+* [**Registro como Cliente**](#reference/recursos/cliente)
+* [**Registro como Estabelecimento**](#reference/recursos/estabelecimento)
+* [**Login**](#reference/recursos/login)
+* [**Logout**](#reference/recursos/logout)
+
+Recursos Dashboard Estabelecimento:
 * [**Menus**](#reference/recursos/menus)
 * [**Categorias**](#reference/recursos/categorias)
 * [**Produtos**](#reference/recursos/produtos)
