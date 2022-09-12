@@ -36,3 +36,32 @@ Requisições para a API devem seguir os padrões:
 | `410` | Registro pesquisado foi apagado do sistema e não esta mais disponível.|
 | `422` | Dados informados estão fora do escopo definido para o campo.|
 | `429` | Número máximo de requisições atingido. (*aguarde alguns segundos e tente novamente*)|
+
+# Recursos
+
+## Registro Cliente (POST) [api/v1/registro/client/]
+
++ Request (application/json)
+
+  + Body
+  
+        {
+          "username": "string",
+          "email": "string",
+          "password":"string",
+          "password2": "string"
+        }
+        
++ Response 201 (application/json)
+
+  + Body
+  
+        {
+          "user": {
+              "username": "string",
+              "email": "string",
+              "is_client": true
+          },
+          "token": "string",
+          "message": "Client account created succesfuly."
+        }
