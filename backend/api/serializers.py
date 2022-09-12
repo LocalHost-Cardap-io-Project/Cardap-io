@@ -6,11 +6,20 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('username', 'email', 'is_client')
 
+
+class OrganizationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Organization
+        fields = ('organization_name',)
+
+
 class OrganizationSignupSerializer(serializers.ModelSerializer):
+    organizations = OrganizationSerializer(source='organization_set')
+
     password2 = serializers.CharField(style={'input_type':'password'}, write_only=True)
     class Meta:
         model = User
-        fields = ('username', 'email','password', 'password2')
+        fields = ('username', 'organizations', 'email','password', 'password2')
         extra_kwargs = {
             'password' : {'write_only' : True}
         }
