@@ -39,7 +39,7 @@ Requisições para a API devem seguir os padrões:
 
 # Recursos
 
-## Registro Cliente (POST) [api/v1/registro/client/]
+## Registro Cliente (POST) [api/v1/signup/client/]
 
 + Request (application/json)
 
@@ -64,4 +64,32 @@ Requisições para a API devem seguir os padrões:
           },
           "token": "string",
           "message": "Client account created succesfuly."
+        }
+
+## Registro Restaurante (POST) [api/v1/signup/organization/]
+
++ Request (application/json)
+
+  + Body
+  
+        {
+          "username": "string",
+          "organizations": {"oganization":"string"},
+          "email": "string",
+          "password":"string",
+          "password2": "ataraxia"
+        }
+        
++ Response 201 (application/json)
+
+  + Body
+  
+        {
+          "user": {
+              "username": "string",
+              "email": "string",
+              "is_client": false
+          },
+          "token": "string",
+          "message": "Organization account created succesfuly."
         }
