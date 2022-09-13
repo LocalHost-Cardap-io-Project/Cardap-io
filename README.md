@@ -114,4 +114,8 @@ Requisições para a API devem seguir os padrões:
           "user_id": 0,
           "is_client": true
         }
+        
+## Logout (POST) [api/v1/logout/]
+
++ No parameters
 
