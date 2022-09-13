@@ -77,7 +77,7 @@ Requisições para a API devem seguir os padrões:
           "organizations": {"oganization":"string"},
           "email": "string",
           "password":"string",
-          "password2": "ataraxia"
+          "password2": "string"
         }
         
 + Response 201 (application/json)
