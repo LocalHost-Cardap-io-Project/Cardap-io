@@ -93,3 +93,25 @@ Requisições para a API devem seguir os padrões:
           "token": "string",
           "message": "Organization account created succesfuly."
         }
+        
+## Login (POST) [api/v1/login/]
+
++ Request (application/json)
+
+  + Body
+  
+        {
+          "username": "string",
+          "password": "string"
+        }
+        
++ Response 201 (application/json)
+
+  + Body
+  
+        {
+          "token": "string",
+          "user_id": 0,
+          "is_client": true
+        }
+
