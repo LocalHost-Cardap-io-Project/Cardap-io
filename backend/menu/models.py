@@ -1,4 +1,5 @@
 from distutils.archive_util import make_zipfile
+from operator import mod
 from tkinter import CASCADE
 from unicodedata import category
 from xml.etree.ElementInclude import default_loader
@@ -61,11 +62,10 @@ class Client(models.Model):
     def __str__(self):
         return self.user.username
 
-
 class Menu(models.Model):
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    img = models.ImageField(upload_to="images/menu-bg" ,null=True, blank=True)
+    img = models.ImageField(upload_to="images/menu-bg", null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -74,6 +74,7 @@ class Categoria(models.Model):
     name = models.CharField(max_length=50)
     img = models.ImageField(upload_to="images/cat-bg", null=True, blank=True)
     description = models.TextField()
+
     menu = models.ForeignKey(Menu, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -84,5 +85,16 @@ class Categoria(models.Model):
 # Criar a tabela Produto e relacionar com a tabela Categoria. Não se esqueça da normalização
 
 class Produto(models.Model):
-    pass
+    name = models.CharField(max_length=50, null=False)
+    weight_in_grams = models.FloatField(null=False)
+    price = models.FloatField(null=False)
+    short_name = models.CharField(max_length=10, null=False)
+    image = models.ImageField(upload_to='images/product', null=False, blank=True)
+    description = models.TextField(null=False)
 
+    category = models.ForeignKey(
+        Categoria, on_delete=models.CASCADE, null=True
+    )
+
+    def __str__(self):
+        return self.name
